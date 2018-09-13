@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <title> Registion Form </title>
+  <meta charset = "utf-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1">
+  <link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel = "stylesheet" type="text/css" href="./css/regPage.css">
+  <script src = "./js/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src = "./js/bootstrap.min.js"></script>
+  <script>
+    function validatePwd(){
+      var pwd1 = document.forms["regForm"]["pwd"].value;
+      var pwd2 = document.forms["regForm"]["pwdValidate"].value;
+      if(pwd1 != pwd2){
+        alert("Password is not match!");
+      }
+    }
+  </script>
+</head>
+
+<body>
+<div class="container">
+
+<div class="bgSizeCover">
+  <h1 style="text-align: center;font-size:50px;padding-top:70px;"> Create an account </h1>
+</div>
+
+<div class="container">
+  <div style="text-align: center;margin:30px;">
+    <button type="button" class="btn btn-primary" style="width: 50%;">Continue with Facebook</button>
+  </div>
+  <div style="text-align: center;margin:30px;">
+    <button type="button" class="btn btn-danger" style="width: 50%;">Continue with Google+</button>
+  </div>
+</div>
+<div class="container">
+<div class="row align-items-center justify-content-center">
+  <form class="form-horizontal" name="regForm" style="margin-left:auto;margin-right:auto;"action="/registion_page.php" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-12">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+    </div>
+    <div class="form-group has-success has-feedback">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-12">
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3" for="pwd2">Re-enter Password:</label>
+      <div class="col-sm-12">
+        <input type="password" class="form-control" id="pwd2" placeholder="Re-enter password" name="pwdValidate" onblur="validatePwd()">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="fName">First name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="fName" placeholder="Enter first name" name="fName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="lName">Last name</label>
+      <div class="col-sm-12">
+        <input type="text" class="form-control" id="lName" placeholder="Enter last name" name="lName">
+      </div>
+    </div>
+    <div class="form-group">
+    <div class="bg-warning" style="padding:5px 25px 5px 25px; width:98%; margin-left:auto;margin-right:auto;">
+      <p>
+        View <a href="TermOfUse.html">Privacy Policy</a><br>
+        By clicking on th <strong>Sign Up</strong> button below. I agree that I have read and accept the <strong>Term of Use</strong>.
+      </p>
+    </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <button type="submit" class="btn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.bgSizeCover{
+  height: 200px;
+  background-image: url(../img/regPageTitle.png);
+  background-size: cover;
+}
+
+.center {
+    padding: 70px 0;
+    border: 3px solid green;
+    text-align: center;
+}

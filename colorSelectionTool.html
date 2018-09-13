@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <title> Production </title>
+  <meta charset = "utf-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1">
+
+  <script src = "./js/jquery-3.3.1.js"></script>
+
+</head>
+
+
+
+<body id = "body1" bgcolor = "rgb(242,155,58)">
+  <script>
+  var r = 255;
+  var g = 255;
+  var b = 255;
+  var body = document.getElementById("body1");
+
+  var colorList = [];
+
+  var targetR = Math.random() * 256;
+  var targetG = Math.random() * 256;
+  var targetB = Math.random() * 256;
+
+  var offset = .2;
+
+  var run = false;
+
+  if(body != null){
+    var Interval = window.setInterval(selector,1);
+  }else{
+    alert("error");
+  }
+
+  function setColor(para){
+    run = false;
+    document.body.style.backgroundColor = para.style.backgroundColor;
+  }
+
+  function waitingList(){
+    var wl = document.getElementById("wl");
+    wl.innerHTML += "<div onclick = 'setColor(this)' style = 'background-color:rgb("+r+","+g+","+b+");padding:20px;width:15vw;'>"+document.body.style.backgroundColor+"</div>";
+  }
+
+  function selector(){
+    var colorRGB = document.getElementById("colorRGB");
+    colorRGB.innerHTML = document.body.style.backgroundColor;
+    if(Math.abs(r-targetR) < offset && Math.abs(g-targetG) < offset && Math.abs(b-targetB) < offset){
+      targetR = Math.random() * 256;
+      targetG = Math.random() * 256;
+      targetB = Math.random() * 256;
+    }else{
+      if(run){
+        changeColor();
+      }
+    }
+  }
+
+  function changeColor(){
+    if(r - targetR > offset){
+      r -=offset;
+    }else if(r - targetR <-offset){
+      r += offset;
+    }
+    if(g - targetG > offset){
+      g -=offset;
+    }else if(g - targetG <-offset){
+      g +=offset;
+    }if(b - targetB > offset){
+      b -=offset;
+    }else if(b - targetB <-offset){
+      b += offset;
+    }
+    document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    //console.log(document.body.style.backgroundColor);
+  }
+
+  </script>
+  <div style = "background-color:white;position:sticky;top:0;border:2px solid black;padding-left:10px;padding-bottom:10px;width:20vw;">
+    <h1>current color:</h1>
+    <p id = "colorRGB"></p>
+    <button id = "run" onclick = "run = !run;"> stop/continue </button>
+    <button id = "select" onclick = "waitingList();"> put on waitingList</button>
+  </div>
+  <div id = "wl">waitingList:</div>
+</body>

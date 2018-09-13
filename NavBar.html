@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src = "./js/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src = "./js/bootstrap.min.js"></script>
+<style>
+body {margin:0;}
+
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+
+<script>
+function navBarController(para){
+
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("search").classList.remove("active");
+    document.getElementById("envelope").classList.remove("active");
+    document.getElementById("global").classList.remove("active");
+    document.getElementById("trash").classList.remove("active");
+    para.classList.add("active");
+}
+
+function page(para){
+  var pageList = document.getElementsByClassName("page");
+  var len = pageList.length;
+  for(var i = 0; i < len; i++){
+    pageList[i].setAttribute("hidden", true);
+  }
+  document.getElementById(para).removeAttribute("hidden");
+}
+
+</script>
+
+<body>
+
+<div class="icon-bar">
+  <a id = "home" onclick = "navBarController(this);page('page1');" class="active" href="#">History</a>
+  <a id = "search" onclick = "navBarController(this);page('page2');" href="#">Collection</a>
+  <a id = "envelope" onclick = "navBarController(this);page('page3');" href="#">Credits</a>
+  <a id = "global" onclick = "navBarController(this);page('page4');" href="#">DingXiang</a>
+  <a id = "trash" onclick = "navBarController(this);page('page5');" href="#">Message</a>
+</div>
+
+<div id = "page1" class = "page">
+	<h1> This is the content in page 1!</h1>
+</div>
+
+<div id = "page2" class = "page" hidden>
+	<h1> This is the content in page 2!</h1>
+</div>
+
+<div id = "page3" class = "page" hidden>
+	<h1> This is the content in page 3!</h1>
+</div>
+
+<div id = "page4" class = "page" hidden>
+	<h1> This is the content in page 4!</h1>
+</div>
+
+<div id = "page5" class = "page" hidden>
+	<h1> This is the content in page 5!</h1>
+</div>
+
+</body>
+</html>

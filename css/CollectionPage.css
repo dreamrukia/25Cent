@@ -1,0 +1,63 @@
+.PersonBlock{
+  margin-left:50px;
+  margin-right:50px;
+  margin-top:50px;
+  margin-bottom:50px;
+  border-width: 1px;
+  border-color:black;
+}
+
+
+.btn1{
+  position:absolute;
+  top:10%;
+  right:10%;
+  width:10%;
+}
+
+.infoBtn1{
+  position:absolute;
+  top: 10%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  font-size: 2%;
+  padding: 2% 2%;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.infoBtn2{
+  position:absolute;
+  top: 17%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  font-size: 2%;
+  padding: 2% 2%;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+}
+.infoBtn3{
+  position:absolute;
+  top: 24%;
+  left: 88%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  font-size: 2%;
+  padding: 2% 2%;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+}
