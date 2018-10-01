@@ -1,80 +1,94 @@
 <!DOCTYPE html>
 <html lang = "en">
-<head>
-  <title> mainPage </title>
-  <meta charset = "utf-8">
-  <meta name = "viewport" content = "width=device-width, initial-scale=1">
-  <link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
-  <link rel = "stylesheet" type="text/css" href="./css/mainPage.css">
-  <script src = "./js/jquery-3.3.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src = "./js/bootstrap.min.js"></script>
-</head>
+	<head>
+		<title> mainPage </title>
+		<meta charset = "utf-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		<link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel = "stylesheet" type="text/css" href="./css/mainPage.css">
+		<script src = "./js/jquery-3.3.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src = "./js/bootstrap.min.js"></script>
+	</head>
 
-<!-->
-style = "background-color:#fff6ee"
-</!-->
+	<!--
+	style = "background-color:#fff6ee"
+	-->
 
-<body background="#" style = "background-repeat:no-repeat;background-size:cover;">
-  <script>
+	<body style = "background-color: #B50804;">
+		<script>
+			function onTopClick() {
+				window.location.hash = "#page2";
+			}
+
+			//var bg = document.getElementById('background');
+			//var path = 'assert/mainPage_BG/';
+			//var rand = Math.floor(Math.random() * 8);
+			//bg.src = path + rand + ".jpg";
+
+		</script>
+
+			<div class = "row">
+				<div class = "col-sm-1 p-0">
+					<img alt = "logo" src = "img/logo.png" style = "width:100%;"></img>
+				</div>
+				<div class = "col-sm-11 m-0 p-0">
+					<div class="btn-group d-flex m-0" role="group" style = "height:50px;">
+						<button type="button" class="btn btn-primary w-100" style = "background:#b50804;border-color:#b50804;">
+							Home
+						</button>
+						<button type="button" class="btn btn-primary w-100" style = "background:#b50804;border-color:#b50804;">
+							Auto
+						</button>
+						<button type="button" class="btn btn-primary w-100" style = "background:#b50804;border-color:#b50804;">
+							Yacht
+						</button>
+						<button type="button" class="btn btn-primary w-100" style = "background:#b50804;border-color:#b50804;">
+							Property
+						</button>
+						<button type="button" class="btn btn-primary w-100" style = "background:#b50804;border-color:#b50804;">
+							Travel
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "row">
+					<!--<img alt = "advertisment" src = "img/temp1.jpg" style = "width:100%;height:100%;"></img>-->
+					<video width = "120%" autoplay>
+						<source src = "showVideo.mp4" type="video/mp4">
+					</video>
+					<div class = "col-sm-12 text-right">
+						<button type = "button" class = "btn btn-primary" onclick="javascript:onTopClick();">
+							Next
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "container" id = "page2" style = "margin-top:220px">
+			<h1 align = "center">Make the DREAM <del>UN</del>TOUCHABLE</h1>
+			<div class="row justify-content-between" style = "margin-top:20px">
+				<div class="col-4">
+					<img src = "assert/mainPage/房子.jpg" alt = "house" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
+				</div>
+				<div class="col-4">
+					<img src = "assert/mainPage/游艇.jpg" alt = "Yacht" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
+				</div>
+			</div>
+			<div class="row justify-content-center" style = "margin-top:20px">
+				<div class="col-4">
+					<img src = "assert/mainPage/地产.jpg" alt = "地产" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
+				</div>
+			</div>
+			<div class="row justify-content-between" style = "margin-top:20px">
+				<div class="col-4">
+					<img src = "assert/mainPage/车.jpg" alt = "car" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
+				</div>
+				<div class="col-4">
+					<img src = "assert/mainPage/旅游.jpg" alt = "travel" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
+				</div>
+			</div>
 
 
-  function onTopClick() {
-    window.location.hash = "#page2";
-  }
-
-  var bg = document.getElementById('background');
-  var path = 'assert/mainPage_BG/';
-  var rand = Math.floor(Math.random()*8);
-  bg.src = path + rand + ".jpg";
-  </script>
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-sm-1">
-        <img alt = "logo" src = "#"></img>
-      </div>
-      <div class = "col-sm-11">
-        <div class="btn-group d-flex" role="group" style = "margin-top:20px">
-          <button type="button" class="btn btn-primary w-100">Home</button>
-          <button type="button" class="btn btn-primary w-100">Auto</button>
-          <button type="button" class="btn btn-primary w-100">Yacht</button>
-          <button type="button" class="btn btn-primary w-100">Property</button>
-          <button type="button" class="btn btn-primary w-100">Travel</button>
-        </div>
-      </div>
-    </div>
-    <div class = "row">
-      <div class = "row" style = "margin-top:20px">
-        <img alt = "advertisment" src = "img/temp1.jpg" style = "width:100%;height:100%;"></img>
-        <div class = "col-sm-12 text-right">
-          <button type = "button" class = "btn btn-primary" onclick="javascript:onTopClick();">Next</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class = "container" id = "page2" style = "margin-top:220px">
-    <h1 align = "center">Make the DREAM <del>UN</del>TOUCHABLE</h1>
-    <div class="row justify-content-between" style = "margin-top:20px">
-      <div class="col-4">
-        <img src = "assert/mainPage/房子.jpg" alt = "house" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
-      </div>
-      <div class="col-4">
-        <img src = "assert/mainPage/游艇.jpg" alt = "Yacht" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
-      </div>
-    </div>
-    <div class="row justify-content-center" style = "margin-top:20px">
-      <div class="col-4">
-        <img src = "assert/mainPage/地产.jpg" alt = "地产" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
-      </div>
-    </div>
-    <div class="row justify-content-between" style = "margin-top:20px">
-      <div class="col-4">
-        <img src = "assert/mainPage/车.jpg" alt = "car" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
-      </div>
-      <div class="col-4">
-        <img src = "assert/mainPage/旅游.jpg" alt = "travel" style = "width:100%;filter:drop-shadow(8px 8px 10px black);"></img>
-      </div>
-    </div>
-
-  </div>
-</body>
+	</body>
