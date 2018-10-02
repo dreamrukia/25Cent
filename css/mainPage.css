@@ -15,3 +15,10 @@ html,body{
   padding: 0px;
   overflow-x: hidden;
 }
+
+.section2_pics{
+  position:absolute;
+  margin-top: 10%;
+  margin-left: 30%;
+  transform: translate(0%,0%);
+}
