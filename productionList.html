@@ -1,0 +1,123 @@
+<html lang = "en">
+<head>
+  <title> Production List </title>
+  <meta charset = "utf-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1">
+  <link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel = "stylesheet" type="text/css" href="./css/productionList.css">
+  <script src = "./js/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src = "./js/bootstrap.min.js"></script>
+  <script src = "./js/productionList.js"></script>
+</head>
+
+<body>
+  <div class = "container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand m-0 p-0" href="#"><img class = "m-0 p-0" src = "assert/headline_common/logo.png" style = "width:60px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarText">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">House <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Auto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Yacht</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Travel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">property</a>
+          </li>
+        </ul>
+        <a class="navbar-text m-0 p-0" href="#myModal" data-toggle="modal">
+          <img class="m-0 p-0" src = "assert/headline_common/login.jpg" style = "width:60px;"></img>
+        </a>
+      </div>
+    </nav>
+    <div class="container" style = "margin-top:100px;margin-left:10vw;margin-right:10vw;width:auto;">
+      <div class = "row">
+        <div class = "col-lg-4">
+          <!--<a href = "#"> <img src = "assert/productionList/1.jpg" class = "img-thumbnail"> </img></a> -->
+          <div class = "production">
+            <a href = "#">
+              <img src="assert/productionList/1.jpg" alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+              <div class="text">54 sterling ave</div>
+            </div>
+          </div>
+          <div class="progress" style = "margin:15px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+          </div>
+        </div>
+
+        <div class = "col-lg-4">
+          <!--<a href = "#"> <img src = "assert/productionList/2.jpg" class = "img-thumbnail"> </img></a>-->
+          <div class = "production">
+            <a href = "#">
+              <img src="assert/productionList/2.jpg" alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+              <div class="text">60 bow water</div>
+            </div>
+          </div>
+          <div class="progress" style = "margin:15px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+          </div>
+        </div>
+        <div class = "col-lg-4">
+          <!--<a href = "#"> <img src = "assert/productionList/3.jpg" class = "img-thumbnail"> </img></a>-->
+          <div class = "production">
+            <a href = "#">
+              <img src="assert/productionList/3.jpg" alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+              <div class="text">405 st geoge pl</div>
+            </div>
+          </div>
+          <div class="progress" style = "margin:15px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="myModalLabel">Login</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary float-right" data-dismiss="modal" aria-hidden="true">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
