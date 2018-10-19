@@ -3,3 +3,22 @@
     background-repeat:no-repeat;
     background-size:cover;
 }
+
+.btn-group button{
+  background:#b50804;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  margin:0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.section2_pics{
+  position:absolute;
+  margin-top: 10%;
+  margin-left: 30%;
+  transform: translate(0%,0%);
+}
