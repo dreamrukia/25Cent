@@ -16,9 +16,37 @@ html,body{
   overflow-x: hidden;
 }
 
-.section2_pics{
-  position:absolute;
-  margin-top: 10%;
-  margin-left: 30%;
-  transform: translate(0%,0%);
+.items{
+  height:600px;
+  width:auto;
+}
+
+#sc_footer{
+    margin: auto;
+    margin-top:50px;
+    width: 962px;
+    height: 55px;
+    background-color: #27354f;
+}
+#sc_p {
+    width:70%;
+    color:#FFFFFF;
+    font-size: 10.5pt;
+    padding-left:10px;
+    padding-top:10px;
+}
+#sc_img {
+    width:36px;
+    height:36px;
+}
+ul.social_icons, li.social {
+    margin-top:-23px;
+    padding-left:5px;
+    padding-right:5px;
+    max-width:25%;
+    list-style: none;
+    float:right;
+    text-decoration:none;
+    display:inline-block;
+    position: relative;
 }

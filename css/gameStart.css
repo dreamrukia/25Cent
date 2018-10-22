@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+.clock{
+    position:absolute;
+    width:200px;
+    height:auto;
+    z-index:1;
+    margin-left:-100px;
+}
+.clock-num{
+    position:absolute;
+    width:74px;
+    height:auto;
+    z-index:3;
+    margin-top:78px;
+    margin-left:-38px;
+    animation-name:down_count;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease;
+}
+
+.roll-ol{
+    position:absolute;
+    width:600px;
+    height:auto;
+    z-index:1;
+    margin-left:-300px;
+}
+
+.roll{
+    position:absolute;
+    width:74px;
+    height:auto;
+    z-index:3;
+    margin-top:240px;
+}
+
+#winner_img{
+    height:auto;
+    position:absolute;
+    margin-top:-100px;
+    z-index:-1;
+    animation-name:winner;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease;
+}
+.congra_text{
+    display: none;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../assert/gameStart/bg.jpg");
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@keyframes winner{
+    0%{
+        width:10px;
+        margin-left:-5px;
+        transform:rotate(0deg);
+    }
+    80%{
+        width:800px;
+        margin-left:-400px;
+        transform:rotate(720deg);
+    }
+    90%{
+        width:900px;
+        margin-left:-450px;
+        transform:rotate(720deg);
+    }
+    100%{
+        width:800px;
+        margin-left:-400px;
+        transform:rotate(720deg);
+    }
+}
+
+@keyframes down_count{
+    0%{
+        width:74px;
+        margin-left:-38px;
+        margin-top:78px;
+    }
+    30%{
+        width:120px;
+        margin-left:-60px;
+        margin-top:58px;
+    }
+    100%{
+        width:74px;
+        margin-left:-38px;
+        margin-top:78px;
+    }
+}
+

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>Production</title>
+<meta charset = "utf-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel = "stylesheet" type="text/css" href="./css/production.css">
+</head>
+<script>
+function scroll(){
+  //console.log("打印log日志");实时看下效果
+  console.log("开始滚动！");
+}
+
+var scrollFunc = function (e) {
+  e = e || window.event;
+  if (e.wheelDelta) {  //第一步：先判断浏览器IE，谷歌滑轮事件
+    if (e.wheelDelta > 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动");
+      $(".nav-text").show();
+      $(".nav-img").css('width','45px');
+      $("#nav-bar").addClass("justify-content-around");
+      $("#nav-bar").removeClass("justify-content-center");
+    }
+    if (e.wheelDelta < 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动");
+      $(".nav-text").hide();
+      $(".nav-img").css('width','60px');
+      $("#nav-bar").removeClass("justify-content-around");
+      $("#nav-bar").addClass("justify-content-center");
+    }
+  } else if (e.detail) {  //Firefox滑轮事件
+    if (e.detail> 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动");
+      $(".nav-text").show();
+      $(".nav-img").css('width','45px');
+      $("#nav-bar").addClass("justify-content-around");
+      $("#nav-bar").removeClass("justify-content-center");
+    }
+    if (e.detail< 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动");
+      $(".nav-text").hide();
+      $(".nav-img").css('width','60px');
+      $("#nav-bar").removeClass("justify-content-around");
+      $("#nav-bar").addClass("justify-content-center");
+    }
+  }
+}
+//给页面绑定滑轮滚动事件
+if (document.addEventListener) {//firefox
+  document.addEventListener('DOMMouseScroll', scrollFunc, false);
+}
+//滚动滑轮触发scrollFunc方法  //ie 谷歌
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+</script>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onscroll = "scroll()">
+<div class = "container-fluid p-0 m-0" style = "height:50px;">
+  <div class = "mh-100 row m-0 p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 p-0 m-0"> <a class="navbar-brand m-0 p-0" href="mainPage.html"><img class = "m-0 p-0" src = "assert/headline_common/logo.png" style = "width:99px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse flex-grow-1" id="navbarText">
+        <ul id = "nav-bar" class="navbar-nav ml-auto flex-nowrap justify-content-around w-100">
+          <li class="nav-item active"> <a class="nav-link" href="productionList.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/house.png"> <span class="nav-text" style = "color:#3e752c;">House</span> </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="productionList_auto.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/auto.png"> <span class="nav-text" style = "color:#94251a;">Auto</span> </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/yacht.png"> <span class="nav-text" style = "color:#1b4db1;">Yacht</span> </a> </li>
+          <li class="nav-item" style = "background:#e99469;"> <a class="nav-link" href="productionList_travel.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/travel_white.png"> <span class="nav-text" style = "color:white;">Travel</span> </a> </li>
+          <!--<li class="nav-item">
+            <a class="nav-link nav-text" href="#">property</a>
+          </li>-->
+        </ul>
+        <a class="navbar-text m-0 p-0" href="#myModal" data-toggle="modal"> <img class="m-0 p-0" src = "assert/headline_common/login.jpg" style = "width:60px;"> </a> </div>
+    </nav>
+  </div>
+  <div class = "row m-0 mh-100" style = "height:5px;width:100%;background-color:black;"></div>
+</div>
+<div class = "sticky-top">
+  <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style = "background:#e99469;">
+    <ul class="navbar-nav" style = "text-align:left;">
+      <h3> Travel </h3>
+      <li class="nav-item"> <a class="nav-link" href="#section1">OVERVIEW</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#section2">VIDEO & PICs</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#section3">DETAILS</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#section4">HOW IT WORKS</a> </li>
+    </ul>
+  </nav>
+  <div class = "row">
+    <div class = "col-lg-12 text-right" style = "width:100vw;"> <a class = "pull-right" onclick="addToWishList()">
+      <img id = "wishlist" src = "assert/productionPage/common/wishlist_none.png" style = "width:30px; height:auto;margin-right:20px;"></a> <a href="#myModal1" data-toggle="modal" class = "pull-right">
+      <img href="#myModal1" data-toggle="modal" src = "assert/productionPage/common/buy_button.png" style = "width:130px; height:auto;"></a> </div>
+  </div>
+  <script>
+  var inWishlist=false;
+    function addToWishList(){
+      if(!inWishlist){
+        $('#wishlist').attr('src','assert/productionPage/common/wishlist_curr.png');
+      }else{
+        $('#wishlist').attr('src','assert/productionPage/common/wishlist_none.png');
+      }
+      inWishlist=!inWishlist;
+    }
+  </script>
+</div>
+<div id="section1" class="container-fluid p-0" style="margin-top:0px;padding-bottom:70px">
+  <div class = "row">
+
+        <div class="col-lg-12">
+          <img class = "img-responsive d-block" style = "width:700px;" src = "assert\productionPage\hawaii\headline.PNG">
+        </div>
+
+  </div>
+  <div class="row m-0 p-0">
+    <div class="col-lg-12 m-0 p-0">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" style="z-index:-1;">
+          <div class="carousel-item active"> <img class="d-block w-100" src="assert/productionPage/hawaii/slidePics/0.jpg" alt="First slide"> </div>
+          <div class="carousel-item"> <img class="d-block w-100" src="assert/productionPage/hawaii/slidePics/1.jpg" alt="Second slide"> </div>
+          <div class="carousel-item"> <img class="d-block w-100" src="assert/productionPage/hawaii/slidePics/2.jpg" alt="Third slide"> </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="z-index:3;"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="z-index:3;"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+      <div class="progress" style = "margin-bottom:0px;height:10px">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="height:10px;width: 75%">75%</div>
+      </div>
+      <div style = "padding:30px;width:25%; margin-top:-25%;z-index:1;background:rgba(0,0,0,0.45);margin-left:15%;">
+        <p class = "text-justify" style="color:white;">
+          7-Day Denver-Oahu Family Vacation
+      Bring the whole family to Hawaii and enjoy the best of Oahu with Waikiki and North Shore accommodations!
+	</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="section2" class="container-fluid" style="height:130vh;margin-top:15%;padding-top:70px;padding-bottom:70px">
+  <div class = "container-fluid">
+    <div class = "row ml-0" id = "outside">
+      <div class = "col-lg-12 pt-3 text-center">
+        <iframe width="966" height="509" src="https://www.youtube.com/embed/FCYlKmvoogo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class="container-fluid">
+      <div class = "row">
+        <div class = "col-lg-4 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\0.jpg"> </div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\1.jpg"></div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\2.jpg"></div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\3.jpg"></div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\4.jpg"></div>
+      </div>
+      <div class = "row">
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\5.jpg"> </div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\6.jpg"></div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\7.jpg"></div>
+        <div class = "col-lg-2 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\8.jpg"></div>
+        <div class = "col-lg-4 p-1"> <img class = "detail_pics" src = "assert\productionPage\hawaii\pics\9.jpg"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id="section3" class="container-fluid" style="height:130vh;padding-top:70px;padding-bottom:70px;">
+  <div class = "row">
+    <div class = "col-lg-12"> <img class="w-100" src="assert\productionPage\common\travel_includes.jpg"> </div>
+  </div>
+  <p style = "font-size:20px;padding-left:20px;">
+    <strong>7-Day Denver-Oahu Family Vacation</strong><br>
+    Bring the whole family to Hawaii and enjoy the best of Oahu with Waikiki and North Shore accommodations!<br>
+    TOTAL PACKAGE PRICE 2399.00 PER PERSON (Based on 6 people) INCLUSIONS:<br>
+    RT Non-stop Airfare from Denver<br>
+    4 Star Accommodations (4 nights), Partial Ocean-view at the Outrigger Reef (2 rooms)<br>
+    5 Star Accommodations (3 nights), Deluxe Ocean-view (2 rooms)<br>
+    Daily Breakfast<br>
+    Alamo minivan><br>
+    Arizona memorial small group private tour<br>
+    Polynesian Culture Super Ambassador<br>
+    Aifare - United Airlines Leave<br>
+    Wednesday, September 26, 2018 <br>
+    Depart 11:30 AM Denver (DEN)<br>
+    Arrives 3:07 PM	Hawaii, Honolulu<br>
+    Return<br>
+    Depart Tuesday, October 2, 2018 8:00 PM Hawaii, Honolulu<br>
+    Arrive Wednesday, October 3, 2018	6:46 AM<br>
+    Hotels Outrigger Reef Waikiki Beach Resort (4 nights)
+
+    </p>
+<div id="section4" class="container-fluid" style="height:90vh;padding-top:70px;padding-bottom:70px;">
+  <div class="container-fluid"> <img class = "w-100" src="assert\headline_common\procedure.png"> </div>
+</div>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <a type="submit" class="btn btn-primary float-right" data-dismiss="modal" aria-hidden="true">Submit</a> <a class="btn btn-primary float-right" href = "Registion.html">Sign up</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Enter to win!</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Amount:</label>
+            <input type="text" class="form-control" id="text" onfocusout="calculateRatio()"></div>
+            <div class="row" >
+              <div class= "col" id = "ratio">
+                Enter to see the chance!
+              </div>
+            </div>
+            <script>
+function calculateRatio(){
+  console.log("test" + ($('#text').val())/262000.);
+  $('#ratio').html("Your chance: "+1+"/"+Math.floor(30000/($('#text').val())));
+}
+            </script>
+          <a type="submit" href="#myModal2" data-toggle="modal" class="btn btn-primary float-right" data-dismiss="modal" aria-hidden="true">Submit</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <a href = "gameStart.html" class = "fixed-top" style = "margin-left:40%;margin-top:20%;">
+    <img class = "img-responsive" src = "assert\productionPage\common\ticket.jpg" width="300"/></a>
+</div>
+</body>
+<style>
+#sc_footer{
+    margin: auto;
+    margin-top:50px;
+    width: 962px;
+    height: 55px;
+    background-color: #27354f;
+}
+#sc_p {
+    width:70%;
+    color:#FFFFFF;
+    font-size: 10.5pt;
+    padding-left:10px;
+    padding-top:10px;
+}
+#sc_img {
+    width:36px;
+    height:36px;
+}
+ul.social_icons, li.social {
+    margin-top:-23px;
+    padding-left:5px;
+    padding-right:5px;
+    max-width:25%;
+    list-style: none;
+    float:right;
+    text-decoration:none;
+    display:inline-block;
+    position: relative;
+}
+
+</style>
+<footer id="sc_footer">
+    <p id="sc_p">Copyright © 2014 Job Review Board. All Rights Reserved.
+        <br/>Love or Hate your Job? Review it here!</p>
+    <ul class="social_icons">
+        <li class="social">
+            <a href="http://www.linkedin.com" target="_blank">
+            <img id = "sc_img" src="http://in-touchcoaching.com/img/linkedin.png"/></a></li>
+        <li class="social"> <a href="http://googleplus.com " target="_blank ">
+     <img id = "sc_img" src="http://img2.wikia.nocookie.net/__cb20130505145739/2brokegirls/images/7/7e/Google-plus-3-512.png "/></a>
+        </li>
+        <li class="social"> <a href="http://www.facebook.com " target="_blank ">
+     <img id = "sc_img" src="http://cdn.redmondpie.com/wp-content/uploads/2011/08/Facebook.png "/></a>
+        </li>
+        <li class="social"> <a href="http://www.twitter.com " target="_blank "><img id = "sc_img" src="https://g.twimg.com/Twitter_logo_blue.png "/></a>
+        </li>
+    </ul>
+</footer>
+</html>

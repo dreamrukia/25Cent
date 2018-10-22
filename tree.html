@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tree</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<script type="text/javascript">
+	 function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<div class = "container-fluid p-0">
+  <div class = "container-fluid p-0 fixed-top" style = "height:50px;">
+    <div class = "mh-100 row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light w-100"> <a class="navbar-brand m-0 p-0" href="mainPage.html"><img class = "m-0 p-0" src = "assert/headline_common/logo.png" style = "width:99px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse flex-grow-1" id="navbarText">
+          <ul id = "nav-bar" class="navbar-nav ml-auto flex-nowrap justify-content-around w-100">
+            <li class="nav-item active"> <a class="nav-link" href="productionList.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/house.png"> <span class="nav-text" style = "color:#3e752c;">House</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/auto.png"> <span class="nav-text" style = "color:#94251a;">Auto</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/yacht.png"> <span class="nav-text" style = "color:#1b4db1;">Yacht</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/travel.png"> <span class="nav-text" style = "color:#e9946a;">Travel</span> </a> </li>
+          </ul>
+          <a class="navbar-text m-0 p-0" href="#myModal" data-toggle="modal"> <img class="m-0 p-0" src = "assert/headline_common/login.jpg" style = "width:60px;"></a> </div>
+      </nav>
+    </div>
+    <div class = "row m-0" style = "height:5px;width:100%;background-color:black;"></div>
+  </div>
+</div>
+<div class="container mt-5">
+    <div class = "row">
+        <div class = "col-12 text-center">
+            <img src="assert/dreamTree/Tree.png" alt="" width="500" class="img-fluid" style = "z-index:-1;"/>
+        </div>
+    </div>
+    <div class = "row mt-2 text-center">
+        <div class = "col-1 text-center p-1" id="select1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img style="z-index:200;position:absolute;" src="assert/dreamTree/items/00.jpg" width="1920" height="600" alt="" class="img-fluid" draggable="true" ondragstart="drag(event)" id="drag1"/> 
+        </div>
+        <div class = "col-1 text-center p-1" id="select2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/01.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag2"/>
+        </div>
+        <div class = "col-1 text-center p-1" id="select3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/02.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag3"/>
+        </div>
+        <div class = "col-1 text-center p-1" id="select4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/03.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag4"/>
+        </div>
+        <div class = "col-1 text-center p-1" id="select5" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/04.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag5"/> 
+        </div>
+        <div class = "col-1 text-center p-1" id="select6" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/05.jpeg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag6"/>
+        </div>
+        <div class = "col-1 text-center p-1" id="select7" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/06.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag7"/>
+        </div>
+        <div class = "col-1 text-center p-1" id="select8" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="assert/dreamTree/items/07.jpg" width="1920" height="600" alt="" class="img-fluid" style="position:absolute;" draggable="true" ondragstart="drag(event)" id="drag8"/>
+        </div>
+    </div>
+
+</div>
+<div style = "position:absolute;top:60px;left:50vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div style = "position:absolute;top:170px;left:47vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div style = "position:absolute;top:172px;left:53vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div style = "position:absolute;top:280px;left:42vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div style = "position:absolute;top:273px;left:61vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div style = "position:absolute;top:400px;left:51vw;width:50px;height:50px;border:2px solid black;margin-left: -25px;" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+<div class = "fixed-bottom row">
+    <div class="col text-center">   <button class = "btn-dark" style = "height:70px;width:300px;">submit</button></div>
+</div>
+</body>
+</html>

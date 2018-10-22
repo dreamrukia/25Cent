@@ -3,4 +3,10 @@ body {
     position: relative;
 }
 
+.detail_pics{
+    width:100%;
+    margin:auto;
+    height:auto;
+}
+
 </style>

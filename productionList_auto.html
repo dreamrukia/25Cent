@@ -1,0 +1,626 @@
+<html lang = "en">
+<head>
+  <title> Production List </title>
+  <meta charset = "utf-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1">
+  <link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
+  <link rel = "stylesheet" type="text/css" href="./css/productionList.css">
+  <script src = "./js/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src = "./js/bootstrap.min.js"></script>
+  <script src = "./js/productionList.js"></script>
+</head>
+
+<script>
+function scroll(){
+  //console.log("打印log日志");实时看下效果
+  console.log("开始滚动！");
+}
+
+var scrollFunc = function (e) {
+  e = e || window.event;
+  if (e.wheelDelta) {  //第一步：先判断浏览器IE，谷歌滑轮事件
+    if (e.wheelDelta > 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动");
+      $(".nav-text").show();
+      $(".nav-img").css('width','30px');
+      $("#nav-bar").addClass("justify-content-around");
+      $("#nav-bar").removeClass("justify-content-center");
+    }
+    if (e.wheelDelta < 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动");
+      $(".nav-text").hide();
+      $(".nav-img").css('width','45px');
+      $("#nav-bar").removeClass("justify-content-around");
+      $("#nav-bar").addClass("justify-content-center");
+    }
+  } else if (e.detail) {  //Firefox滑轮事件
+    if (e.detail> 0) { //当滑轮向上滚动时
+      console.log("滑轮向上滚动");
+      $(".nav-text").show();
+      $(".nav-img").css('width','30px');
+      $("#nav-bar").addClass("justify-content-around");
+      $("#nav-bar").removeClass("justify-content-center");
+    }
+    if (e.detail< 0) { //当滑轮向下滚动时
+      console.log("滑轮向下滚动");
+      $(".nav-text").hide();
+      $(".nav-img").css('width','45px');
+      $("#nav-bar").removeClass("justify-content-around");
+      $("#nav-bar").addClass("justify-content-center");
+    }
+  }
+}
+//给页面绑定滑轮滚动事件
+if (document.addEventListener) {//firefox
+  document.addEventListener('DOMMouseScroll', scrollFunc, false);
+}
+//滚动滑轮触发scrollFunc方法  //ie 谷歌
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+</script>
+
+<body onscroll = "scroll()" style = " font-family: Arial, Helvetica, sans-serif;">
+  <div class = "container-fluid p-0 fixed-top" style = "height:50px;">
+    <div class = "mh-100 row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+        <a class="navbar-brand m-0 p-0" href="mainPage.html"><img class = "m-0 p-0" src = "assert/headline_common/logo.png" style = "width:99px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-1" id="navbarText">
+          <ul id = "nav-bar" class="navbar-nav ml-auto flex-nowrap justify-content-around w-100">
+            <li class="nav-item active"> <a class="nav-link" href="productionList.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/house.png"> <span class="nav-text" style = "color:#3e752c;">House</span> </a> </li>
+            <li class="nav-item" style = "background:#94251a;"> <a class="nav-link" href="productionList_auto.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/auto_white.png"> <span class="nav-text" style = "color:white;">Auto</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/yacht.png"> <span class="nav-text" style = "color:#1b4db1;">Yacht</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="productionList_travel.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/travel.png"> <span class="nav-text" style = "color:#e9946a;">Travel</span> </a> </li>
+
+            <!--<li class="nav-item">
+            <a class="nav-link nav-text" href="#">property</a>
+          </li>-->
+        </ul>
+        <a class="navbar-text m-0 p-0" href="#myModal" data-toggle="modal">
+          <img class="m-0 p-0" src = "assert/headline_common/login.jpg" style = "width:60px;">
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class = "row m-0" style = "height:5px;width:100%;background-color:black;"></div>
+</div>
+<div class="container" style = "margin-top:100px;width:auto;">
+  <div class = "row">
+    <div class = "col-lg-12 p-0">
+      <!--<a href = "#"> <img src = "assert/productionList_auto/1.jpg" class = "img-thumbnail"> </img></a> -->
+      <div class = "production">
+        <a href = "production_auto.html">
+          <img src="assert/productionList_auto/1.jpeg" alt="Avatar" class="image" style="width:100%">
+        </a>
+        <div class="middle">
+          <div class="text">Audi R8</div>
+        </div>
+      </div>
+      <div class="progress" style = "margin:15px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%">66%</div>
+      </div>
+      <div class = "row text-center">
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have reached 66%</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have Raised $150500</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-3 text-center">
+          <p class="text-justify text-center">  Remaining 10d</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-lg-6">
+      <!--<a href = "#"> <img src = "assert/productionList_auto/2.jpg" class = "img-thumbnail"> </img></a>-->
+      <div class = "production">
+        <a href = "#">
+          <img src="assert/productionList_auto/3.jpg" alt="Avatar" class="image" style="width:100%">
+        </a>
+        <div class="middle">
+          <div class="text">Tesla model S</div>
+        </div>
+      </div>
+      <div class="progress" style = "margin:15px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">88%</div>
+      </div>
+      <div class = "row text-center">
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have reached 88%</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have Raised $240008</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-3 text-center">
+          <p class="text-justify text-center">  Remaining 3d</p>
+        </div>
+      </div>
+    </div>
+    <div class = "col-lg-6">
+      <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+      <div class = "production">
+        <a href = "#">
+          <img src="assert/productionList_auto/4.jpg" alt="Avatar" class="image" style="width:100%">
+        </a>
+        <div class="middle">
+          <div class="text">Mercedes Benz S</div>
+        </div>
+      </div>
+      <div class="progress" style = "margin:15px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+      </div>
+      <div class = "row text-center">
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have reached 66%</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-4 text-center">
+          <p class="text-justify text-center">Have Raised $110000</p>
+
+        </div>
+        <div style = "width:2px;background-color:black;height:30px;"></div>
+        <div class = "col-sm-3 text-center">
+          <p class="text-justify text-center">  Remaining 10d</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/2.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/8.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Porsche GT2</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $20014</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/9.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">AUDI R8</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $1880000</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/10.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">LAND ROVER, velar</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $70896</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-6">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/2.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/6.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Shelby GT350</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $68530</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-6">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/7.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">BMW X5</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $82642</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class = "col-lg-12 p-0">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/1.jpg" class = "img-thumbnail"> </img></a> -->
+    <div class = "production">
+      <a href = "production.html">
+        <img src="assert/productionList_auto/2.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Porsche Palameila</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%">66%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $160043</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/2.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/8.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Porsche GT2</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $20014</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/9.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Audi R8</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $270050</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-4">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/10.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">LAND ROVER VELAR</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $70896</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-lg-6">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/2.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/6.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">SHELBY GT350</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">55%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $68530</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  <div class = "col-lg-6">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/3.jpg" class = "img-thumbnail"> </img></a>-->
+    <div class = "production">
+      <a href = "#">
+        <img src="assert/productionList_auto/7.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">BMWW X5</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">99%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $82642</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class = "col-lg-12 p-0">
+    <!--<a href = "#"> <img src = "assert/productionList_auto/1.jpg" class = "img-thumbnail"> </img></a> -->
+    <div class = "production">
+      <a href = "production.html">
+        <img src="assert/productionList_auto/2.jpg" alt="Avatar" class="image" style="width:100%">
+      </a>
+      <div class="middle">
+        <div class="text">Porsche Palameila</div>
+      </div>
+    </div>
+    <div class="progress" style = "margin:15px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%">66%</div>
+    </div>
+    <div class = "row text-center">
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have reached 66%</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-4 text-center">
+        <p class="text-justify text-center">Have Raised $160043</p>
+
+      </div>
+      <div style = "width:2px;background-color:black;height:30px;"></div>
+      <div class = "col-sm-3 text-center">
+        <p class="text-justify text-center">  Remaining 10d</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Login</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          </div>
+          <a type="submit" class="btn btn-primary float-right" data-dismiss="modal" aria-hidden="true">Submit</a>
+          <a class="btn btn-primary float-right" href = "Registion.html">Sign up</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<style>
+#sc_footer{
+    margin: auto;
+    margin-top:50px;
+    width: 962px;
+    height: 55px;
+    background-color: #27354f;
+}
+#sc_p {
+    width:70%;
+    color:#FFFFFF;
+    font-size: 10.5pt;
+    padding-left:10px;
+    padding-top:10px;
+}
+#sc_img {
+    width:36px;
+    height:36px;
+}
+ul.social_icons, li.social {
+    margin-top:-23px;
+    padding-left:5px;
+    padding-right:5px;
+    max-width:25%;
+    list-style: none;
+    float:right;
+    text-decoration:none;
+    display:inline-block;
+    position: relative;
+}
+
+</style>
+<footer id="sc_footer">
+    <p id="sc_p">Copyright © 2014 Job Review Board. All Rights Reserved.
+        <br/>Love or Hate your Job? Review it here!</p>
+    <ul class="social_icons">
+        <li class="social">
+            <a href="http://www.linkedin.com" target="_blank">
+            <img id = "sc_img" src="http://in-touchcoaching.com/img/linkedin.png"/></a></li>
+        <li class="social"> <a href="http://googleplus.com " target="_blank ">
+     <img id = "sc_img" src="http://img2.wikia.nocookie.net/__cb20130505145739/2brokegirls/images/7/7e/Google-plus-3-512.png "/></a>
+        </li>
+        <li class="social"> <a href="http://www.facebook.com " target="_blank ">
+     <img id = "sc_img" src="http://cdn.redmondpie.com/wp-content/uploads/2011/08/Facebook.png "/></a>
+        </li>
+        <li class="social"> <a href="http://www.twitter.com " target="_blank "><img id = "sc_img" src="https://g.twimg.com/Twitter_logo_blue.png "/></a>
+        </li>
+    </ul>
+</footer>
+</html>

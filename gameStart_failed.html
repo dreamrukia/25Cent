@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>gameStart</title>
+<link rel = "stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel = "stylesheet" type="text/css" href="./css/gameStart.css">
+<script src = "./js/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src = "./js/bootstrap.min.js"></script>
+</head>
+
+<body id = "bd" class = "bg">
+<div class = "container-fluid p-0">
+  <div class = "container-fluid p-0 fixed-top" style = "height:50px;">
+    <div class = "mh-100 row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light w-100"> <a class="navbar-brand m-0 p-0" href="mainPage.html"><img class = "m-0 p-0" src = "assert/headline_common/logo.png" style = "width:99px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse flex-grow-1" id="navbarText">
+          <ul id = "nav-bar" class="navbar-nav ml-auto flex-nowrap justify-content-around w-100">
+            <li class="nav-item active"> <a class="nav-link" href="productionList.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/house.png"> <span class="nav-text" style = "color:#3e752c;">House</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="productionList_auto.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/auto.png"> <span class="nav-text" style = "color:#94251a;">Auto</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/yacht.png"> <span class="nav-text" style = "color:#1b4db1;">Yacht</span> </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="productionList_travel.html"> <img class = "nav-img" style = "width:45px;" src = "assert/headline_common/travel.png"> <span class="nav-text" style = "color:#e9946a;">Travel</span> </a> </li>
+          </ul>
+          <a class="navbar-text m-0 p-0" href="#myModal" data-toggle="modal"> <img class="m-0 p-0" src = "assert/headline_common/login.jpg" style = "width:60px;"></a> </div>
+      </nav>
+    </div>
+    <div class = "row m-0" style = "height:5px;width:100%;background-color:black;"></div>
+  </div>
+</div>
+<div class = "container-fluid">
+  <div class = "row"> <a href="mainPage.html">back</a></div>
+</div>
+<div id = "isRolling" class = "container-fluid" style = "margin-top:60px;">
+  <div class = "row">
+    <div class = "col text-center">
+      <h1 style = "color:darkgreen;"><img src = "assert/gameStart/ticket.png" class = "img-responsive" style = "width:90px;height:auto;" align="center"> YOUR NUMBER: 123456 </h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-12 text-center">
+      <h2 style = "color:yellow;">ONLY 10 MINUTES LEFT!</h2>
+    </div>
+  </div>
+  <div class = "row">
+    <div id = "dc" class = "col-lg-12 text-center"> <img src = "assert/gameStart/CLOCK.png" class = "img-responsive clock"> <img id = "down_count" src = "assert/gameStart/nums/9.png" class = "img-responsive clock-num"> </div>
+  </div>
+  <div class = "row" style = "height:600px;">
+    <div class = "col-lg-12 text-center"> <img src = "assert/gameStart/num_outline.png" class = "img-responsive roll-ol"> <img id = "roll1" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: -230px;"> <img id = "roll2" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: -150px;"> <img id = "roll3" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: -70px;"> <img id = "roll4" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: 15px;"> <img id = "roll5" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: 95px;"> <img id = "roll6" src = "assert/gameStart/nums/9.png" class = "img-responsive roll" style = "margin-left: 170px;"> </div>
+  </div>
+</div>
+<div class = "container">
+  <div class = "row text-center" style = "margin-top:100px;">
+    <div class = "col-lg-12">
+      <h1 class = "congra_text text-center" style = "color:#FFFFFF;z-index:5;text-shadow: 2px 2px grey;">SORRY you did not win this time >_<</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div id = "winner" class = "col-lg-12 text-center"></div>
+  </div>
+  <div class = "row">
+    <div class = "col-lg-12 text-center">
+      <h3 class = "congra_text text-center" style = "color:#FFFFFF;z-index:5;text-shadow: 2px 2px grey;">But! You got 100 points to redeem free gifts!</h3>
+    </div>
+  </div>
+</div>
+<div class = "container">
+  <div class = "row m-0 p-0">
+    <div class = "col-lg-12 m-0 p-0 text-center"> <a href = "mainPage.html"><img class = "mx-auto img-responsive fixed-bottom d-block" src = "assert/gameStart/backToMain.png" style = "width:350px"> </a></div>
+  </div>
+</div>
+<script>
+var body = document.getElementById("bd");
+var DOWN_COUNT = 0;
+var ROLL = 1;
+var STOP = 2;
+
+var status = DOWN_COUNT;
+
+if (body != null) {
+    var Interval = window.setInterval(selector, 1);
+} else {
+    alert("error");
+}
+
+var t = 0;
+var curr_dc = 9;
+
+var dir_dc = "assert/gameStart/nums/";
+
+function selector() {
+    if(status == DOWN_COUNT){
+        if(t == 200){
+            t %=200;
+            curr_dc--;
+            //$('#down_count').attr('src',dir_dc+curr_dc+".png");
+            $('#down_count').remove();
+            $('#dc').append('<img id = "down_count" src = "assert/gameStart/nums/'+curr_dc+'.png" class = "img-responsive clock-num">');
+            if(curr_dc==0){
+                status++;
+            }
+        }else{
+
+            t++;
+        }
+    }else if(status == ROLL){
+        if(t==800){
+            t%=800;
+            $('#roll1').attr('src',dir_dc+3+".png");
+            $('#roll2').attr('src',dir_dc+2+".png");
+            $('#roll3').attr('src',dir_dc+6+".png");
+            $('#roll4').attr('src',dir_dc+9+".png");
+            $('#roll5').attr('src',dir_dc+2+".png");
+            $('#roll6').attr('src',dir_dc+2+".png");
+            status++;
+        }else{
+            t++;
+           if(t%20==0){
+               $('#roll1').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+               $('#roll2').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+               $('#roll3').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+               $('#roll4').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+               $('#roll5').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+               $('#roll6').attr('src',dir_dc+parseInt(10*Math.random(),10)+".png");
+            }
+        }
+    }else{
+        $('#isRolling').animate({width:0},2000);
+        if($('#isRolling').width()<50){
+            $('#isRolling').remove();
+            $('#winner').append('<img id = "winner_img" class = "img-responsive text-center" src = "assert/gameStart/failed.png">');
+            $('.congra_text').show(1000);
+        }
+    }
+}
+</script>
+</body>
+</html>
