@@ -1,0 +1,57 @@
+需要在邮件里问两个问题
+1.我们为了这个项目刚刚成立了公司，请问在审批上对我们这样的新公司会有影响吗？
+2.大概的审批时间会有多久？2个月或者3个月？
+3. 是否现在就需要开银行账户？（表格上需要公司账户信息）
+4. 申请表需要交几个人的？（公司一共三个co-founders）personal disclosure/personal history disclosure
+
+Q&A
+
+1.The system is free to the charity?
+系统对非盈利组织是完全免费的，唯一需要非盈利组织做的就是获得lgca的线上抽奖许可。降低非盈利组织线上抽奖的技术门槛，形成聚集地并进行集中宣传是我们的目标。帮助非盈利组织更好的造福社会是我们的愿景。
+
+
+2.Where is the profit comes?
+我们的利润来源有两点，第一，我们的利润来源于帮助商家卖物得倒的报酬，例如车行里的销售拿车行利润的提成一样。第二，来自于广告收入。而利润我们会会用于平台的运营和发展，随着我们的成长和不断完善，能够更有效的帮助非盈利组织。
+
+3.Who is purchasing the prize and who is providing the prize? Is the prize providors responsable for the prize to the raffle winner?
+我们平台首先会根据用户的投票意向选取最受欢迎的一批产品，然后我们平台会跟商家进行关于价格洽谈，确保符合市场价值。之后由非盈利按照合同来进行支付，但是非盈利组织可以委托我们进行奖品的deliver。非盈利组织对奖品负责，如果有质量方面的问题那么由商家来负责。
+
+4.Once the raffle has hit its minimum target the funds will transfered from whatever bank account you guys have to the charity, and the charity will purchase the prize, and whatever the additional revenue that aim they realized they can keep dependency.
+我就不写中文了这
+
+5.Each prize has an assigned value, the purchase are aim at the target amount which is set in the system.
+是的，目标金额是从活动开始之前就已经确定而且不会改变的，同理，活动的时间也会在活动开始前定好切不变。唯一不确定的事情是，是否能在规定的时间内筹集到目标金额的预授权。
+
+6.Who determine How long the term release, at the very beginning?
+在最开始我们会征求非盈利组织的意见，如果他们有过线下抽奖的经验，在结合我们的广告投放量，共同决定周期的时长。
+
+7。You also indicate a (pure) amount of tickets?
+我们计划每张票的售价仅可能的低，这样人们的选择空间更大。例如25分。
+
+8.who ingoshiate the prize?
+我们会为非盈利组织挑选和分配prize，确保prize的售价在市场合理区间内。
+
+9.How do people get points, and where do people use those points?
+在每一轮抽奖中，没有中奖的用户都会获得积分，取决于之前投多少钱。我们在DEMO里没有制作积分页面，但是我们将来会有这个页面和功能。
+
+10.Do you have membership?
+我们需要用户注册，并且提供信用卡或PayPal信息，但是我们不会收取任何的membership费用。
+
+11.Can the points redeem another draw?
+在我们的起步阶段，我们只能把积分用于换取物品。
+
+
+12.Is the only way purchase the tickets online?
+是的，通过我们的线上平台是唯一可以买票的途径。
+
+13.是否读过规章制度，是否知道你们是在做一个技术提供商。
+我们读过规章制度，也很明确的知道我们在申请一个技术支持商的执照。
+
+ 
+14.Does the charity has access to the contract from the prize providor?
+我们会就某一个物品签订一个三方协议，其中上面会明确的指出物品的销售价格等信息。
+
+
+
+
+
